@@ -3,10 +3,6 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
-  throw new Error('Las variables de entorno EMAIL_USER y EMAIL_PASS no están definidas.');
-}
-
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
