@@ -1,4 +1,4 @@
-import { DataTypes, Model } from 'sequelize';
+import { DataTypes, Model, Transaction } from 'sequelize';
 import sequelize from '../config/db';
 import Usuario from './user.models';
 
@@ -25,7 +25,7 @@ Venta.init({
   sequelize,
   modelName: 'Venta',
   tableName: 'Venta',
-  timestamps: false,
+  timestamps: true,
 });
 
 Venta.belongsTo(Usuario, { foreignKey: 'id_usuario' });
